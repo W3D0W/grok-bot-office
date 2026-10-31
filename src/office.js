@@ -110,16 +110,16 @@ export function buildOffice(scene, plan, templates) {
   root.name = 'office';
   scene.add(root);
 
-  const wallMat = new THREE.MeshStandardMaterial({ color: '#f4efe8', roughness: 0.92 });
+  const wallMat = new THREE.MeshStandardMaterial({ color: '#23262e', roughness: 0.86 });
   const site = new THREE.Mesh(
     new THREE.CircleGeometry(46, 64),
-    new THREE.MeshStandardMaterial({ color: '#cbb89a', roughness: 1 }),
+    new THREE.MeshStandardMaterial({ color: '#101218', roughness: 1 }),
   );
   site.rotation.x = -Math.PI / 2;
   site.receiveShadow = true;
   root.add(site);
 
-  const corridorMat = new THREE.MeshStandardMaterial({ color: '#efe3d2', roughness: 0.88 });
+  const corridorMat = new THREE.MeshStandardMaterial({ color: '#171a22', roughness: 0.9 });
   for (const corridor of plan.corridors) addCarpet(root, corridor, corridorMat, 0.025);
 
   for (const room of plan.rooms) {
@@ -132,15 +132,22 @@ export function buildOffice(scene, plan, templates) {
       polygonOffsetUnits: -2,
     });
     addCarpet(root, room, mat, 0.04);
-    const cap = new THREE.MeshStandardMaterial({ color: tone.trim, roughness: 0.7 });
+    const cap = new THREE.MeshStandardMaterial({
+      color: tone.trim,
+      emissive: tone.color,
+      emissiveIntensity: 0.9,
+      roughness: 0.35,
+    });
     const glass = room.section === 'Manager';
     const body = glass
       ? new THREE.MeshStandardMaterial({
-        color: '#d5e4ee',
+        color: '#9ec8de',
         roughness: 0.08,
-        metalness: 0.04,
+        metalness: 0.15,
         transparent: true,
-        opacity: 0.2,
+        opacity: 0.22,
+        emissive: tone.color,
+        emissiveIntensity: 0.15,
       })
       : wallMat;
     buildWalls(root, room, plan.doors, body, cap, glass ? 1.35 : 1.16);
@@ -152,9 +159,9 @@ export function buildOffice(scene, plan, templates) {
   const screens = addScreens(root);
   const lamps = addLamps(root);
 
-  const hemi = new THREE.HemisphereLight('#fff4e4', '#c8b297', 0.72);
+  const hemi = new THREE.HemisphereLight('#b7c6da', '#1a1c24', 0.55);
   scene.add(hemi);
-  const sun = new THREE.DirectionalLight('#fff1dc', 2.5);
+  const sun = new THREE.DirectionalLight('#e7eef8', 1.35);
   sun.position.set(18, 28, 12);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
@@ -168,7 +175,7 @@ export function buildOffice(scene, plan, templates) {
   sun.shadow.normalBias = 0.035;
   scene.add(sun);
   scene.add(sun.target);
-  scene.background = new THREE.Color('#d7e4ef');
+  scene.background = new THREE.Color('#12151c');
 
   let screenClock = 0;
   return {
@@ -179,15 +186,15 @@ export function buildOffice(scene, plan, templates) {
     },
     update(parts, dt) {
       const night = nightAmount(parts);
-      sun.intensity = THREE.MathUtils.lerp(2.55, 0.18, night);
-      sun.color.set(night > 0.65 ? '#9aabc4' : night > 0.3 ? '#ffb27a' : '#fff1dc');
-      hemi.intensity = THREE.MathUtils.lerp(0.7, 0.22, night);
-      hemi.color.set(night > 0.5 ? '#33445c' : '#fff4e4');
-      const sky = new THREE.Color('#d5e2ee').lerp(new THREE.Color('#1c2433'), night);
+      sun.intensity = THREE.MathUtils.lerp(1.35, 0.2, night);
+      sun.color.set(night > 0.65 ? '#6d7c96' : night > 0.3 ? '#c98662' : '#d5e2f2');
+      hemi.intensity = THREE.MathUtils.lerp(0.55, 0.16, night);
+      hemi.color.set(night > 0.5 ? '#243044' : '#8ea0b8');
+      const sky = new THREE.Color('#12151c').lerp(new THREE.Color('#07090e'), night);
       scene.background.copy(sky);
       for (const lamp of lamps) {
-        lamp.light.intensity = THREE.MathUtils.lerp(4, 22, night);
-        lamp.bulb.material.emissiveIntensity = THREE.MathUtils.lerp(0.35, 1.6, night);
+        lamp.light.intensity = THREE.MathUtils.lerp(12, 26, night);
+        lamp.bulb.material.emissiveIntensity = THREE.MathUtils.lerp(0.8, 1.8, night);
       }
       screenClock += dt;
       if (screenClock > 0.45) {
@@ -391,6 +398,25 @@ function addLandmarks(parent, templates) {
   addPoster(parent, T.frame, 1.2, 16.4, 'NIGHT DRIVE', '#1d4e89', '#f2d48a');
   addPoster(parent, T.frame, 1.2, 18.6, 'QUIET ROOM', '#8c2f39', '#f6efe4');
   addPoster(parent, T.frameSmall, 1.2, 20.5, 'GOLD HOUR', '#c9862a', '#241c12');
+  addPoster(parent, T.frameSmall, 26.2, -2.2, 'TICKER', '#12382c', '#b8ffd4');
+  addPoster(parent, T.frame, -26.2, -2, 'LOUNGE', '#2a241c', '#f2d48a');
+  place(parent, T.plantSmall, -26.4, -8.6, 0, 0.4);
+  place(parent, T.plantSmall, 26.4, 8.2, 0.4, 0.42);
+  place(parent, T.lamp, -22.4, 14.2, 0.2, 1.15, 0, true);
+  place(parent, T.rug, -15.2, -16.2, 0.1, 2.6);
+  place(parent, T.rug, 14.2, -16.2, 0, 2.6);
+  ledStrip(parent, 8, 21.35, 10, 0, '#7eb6ff');
+  ledStrip(parent, 2.15, 18, 5.2, Math.PI / 2, '#f0d078');
+}
+
+function ledStrip(parent, x, z, length, yaw, color) {
+  const strip = new THREE.Mesh(
+    new THREE.BoxGeometry(length, 0.035, 0.05),
+    new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 1.6, roughness: 0.3 }),
+  );
+  strip.position.set(x, 1.08, z);
+  strip.rotation.y = yaw;
+  parent.add(strip);
 }
 
 function addPoster(parent, frame, x, z, title, bg, fg) {
@@ -500,7 +526,7 @@ function moviePlane() {
   redraw();
   const mesh = new THREE.Mesh(
     new THREE.PlaneGeometry(4.4, 2.35),
-    new THREE.MeshStandardMaterial({ map: tex, emissiveMap: tex, emissive: '#ffffff', emissiveIntensity: 0.35, roughness: 0.45 }),
+    new THREE.MeshStandardMaterial({ map: tex, emissiveMap: tex, emissive: '#ffffff', emissiveIntensity: 0.9, roughness: 0.35 }),
   );
   return { mesh, redraw };
 }

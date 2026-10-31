@@ -1,6 +1,6 @@
 # Grok Bot Office
 
-A top-down 3D office for the 26 bots in [`data/bots.json`](data/bots.json). Each bot is a rigged character with a name label. They walk on a grid, work their routines, hand folders to each other, patrol other wings, and sleep through quiet hours.
+A top-down 3D office for the 26 bots in [`data/bots.json`](data/bots.json). Each bot is a glossy 3D mark of its app icon (`iconShape` and `iconColor`). They walk on a grid, work their routines, hand folders to each other, patrol other wings, and sleep through quiet hours.
 
 Live site: https://w3d0w.github.io/grok-bot-office/
 
@@ -20,7 +20,7 @@ Drag to orbit, scroll or pinch to zoom. Click a bot for their section, role, rou
 
 The floor is one building with a corridor around a glass manager office. Wings are tinted by section: Manager, Personal, Food, Finance, Social Media, Work, and Jobs. Food has a kitchen and cafe. Finance has a row of trading screens. Social Media has two hangouts: a movie-case wall, and a home theater with televisions, a projector, a screen, and couches. Social bots wander between those two spots when they are free.
 
-Movement uses an A* grid. Bots follow the path with the walk clip. They do not teleport. If someone is in the next cell they wait and replan, so doorways do not pile up as easily.
+Movement uses an A* grid. Bots follow the path with a procedural lean and bounce. They do not teleport. If someone is in the next cell they wait and replan, so doorways do not pile up as easily.
 
 Priority, highest first:
 
@@ -101,6 +101,8 @@ Pushes to `main` run [`.github/workflows/pages.yml`](.github/workflows/pages.yml
 
 Asset licenses and sources are in [CREDITS.md](CREDITS.md).
 
-## Limits
+## Icon shapes
 
-The modular character rig includes idle, walk, wave, and an interact clip used for working. It does not include a separate typing, sit, or lie-down clip, so working is the interact loop and sleep is idle plus Zzz at the desk. The newer Universal Animation Library does not share this skeleton, so those clips are not mixed in. Poster text is original, not real movie marketing.
+`iconShape` and `iconColor` on each bot drive the mascot. Shapes are `hex`, `square`, `tablet`, `wedge`, `blob`, and `default` (a circle). Colors are `red`, `black`, `yellow`, `green`, `blue`, `violet`, and `cyan`. The paint hex values live in `ICON_COLORS` in `src/actors.js`, so a reference screenshot can be matched in one place. `black` is charcoal with a light rim so it stays visible on the dark floor. Section colors still tint the rooms.
+
+Idle hovers, walking leans and bounces, working flickers the screen, and sleep dims the eyes and shows Zzz. Poster text is original, not real movie marketing.

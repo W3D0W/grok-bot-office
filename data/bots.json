@@ -11,182 +11,234 @@
    "section": "Manager",
    "color": "red",
    "lead": true,
-   "role": "Designs and manages all the bots"
+   "role": "Designs and manages all the bots",
+   "iconShape": "hex",
+   "iconColor": "red"
   },
   {
    "name": "Life Bot",
    "section": "Personal",
    "color": "silver",
    "lead": true,
-   "role": "Family, holidays, personal reminders"
+   "role": "Family, holidays, personal reminders",
+   "iconShape": "wedge",
+   "iconColor": "black"
   },
   {
    "name": "Calendar Bot",
    "section": "Personal",
    "color": "silver",
    "lead": false,
-   "role": "Shared calendar scheduler"
+   "role": "Shared calendar scheduler",
+   "iconShape": "square",
+   "iconColor": "black"
   },
   {
    "name": "Email Bot",
    "section": "Personal",
    "color": "silver",
    "lead": false,
-   "role": "Personal email sorting and drafts"
+   "role": "Personal email sorting and drafts",
+   "iconShape": "square",
+   "iconColor": "black"
   },
   {
    "name": "Nutrition Bot",
    "section": "Food",
    "color": "amber",
    "lead": true,
-   "role": "Weekly dinner plans and coaching"
+   "role": "Weekly dinner plans and coaching",
+   "iconShape": "wedge",
+   "iconColor": "yellow"
   },
   {
    "name": "Grocery Bot",
    "section": "Food",
    "color": "amber",
    "lead": false,
-   "role": "Turns meals into a shopping checklist"
+   "role": "Turns meals into a shopping checklist",
+   "iconShape": "tablet",
+   "iconColor": "yellow"
   },
   {
    "name": "Finance Bot",
    "section": "Finance",
    "color": "green",
    "lead": true,
-   "role": "Money questions, runs the review loop"
+   "role": "Money questions, runs the review loop",
+   "iconShape": "wedge",
+   "iconColor": "green"
   },
   {
    "name": "Draft Bot",
    "section": "Finance",
    "color": "green",
    "lead": false,
-   "role": "Builds charts and reports"
+   "role": "Builds charts and reports",
+   "iconShape": "tablet",
+   "iconColor": "green"
   },
   {
    "name": "Review Bot",
    "section": "Finance",
    "color": "green",
    "lead": false,
-   "role": "Checks Draft Bot's math"
+   "role": "Checks Draft Bot's math",
+   "iconShape": "tablet",
+   "iconColor": "green"
   },
   {
    "name": "Strategy Bot",
    "section": "Finance",
    "color": "green",
    "lead": false,
-   "role": "Writes trade plans on request"
+   "role": "Writes trade plans on request",
+   "iconShape": "tablet",
+   "iconColor": "green"
   },
   {
    "name": "Scout Bot",
    "section": "Finance",
    "color": "green",
    "lead": false,
-   "role": "Premarket stock scan"
+   "role": "Premarket stock scan",
+   "iconShape": "tablet",
+   "iconColor": "green"
   },
   {
    "name": "Social Bot",
    "section": "Social Media",
    "color": "blue",
    "lead": true,
-   "role": "Theater posts and inbox"
+   "role": "Theater posts and inbox",
+   "iconShape": "wedge",
+   "iconColor": "blue"
   },
   {
    "name": "Video Bot",
    "section": "Social Media",
    "color": "blue",
    "lead": false,
-   "role": "Edits theater video"
+   "role": "Edits theater video",
+   "iconShape": "tablet",
+   "iconColor": "blue"
   },
   {
    "name": "Insights Bot",
    "section": "Social Media",
    "color": "blue",
    "lead": false,
-   "role": "Weekly social stats"
+   "role": "Weekly social stats",
+   "iconShape": "tablet",
+   "iconColor": "blue"
   },
   {
    "name": "Price Bot",
    "section": "Social Media",
    "color": "blue",
    "lead": false,
-   "role": "Wishlist price watcher"
+   "role": "Wishlist price watcher",
+   "iconShape": "tablet",
+   "iconColor": "blue"
   },
   {
    "name": "Ratings Bot",
    "section": "Social Media",
    "color": "blue",
    "lead": false,
-   "role": "Weekly Letterboxd top 5"
+   "role": "Weekly Letterboxd top 5",
+   "iconShape": "default",
+   "iconColor": "blue"
   },
   {
    "name": "Work Bot",
    "section": "Work",
    "color": "violet",
    "lead": true,
-   "role": "Work planner and EA"
+   "role": "Work planner and EA",
+   "iconShape": "wedge",
+   "iconColor": "violet"
   },
   {
    "name": "Work Email Bot",
    "section": "Work",
    "color": "violet",
    "lead": false,
-   "role": "Work email sorting"
+   "role": "Work email sorting",
+   "iconShape": "square",
+   "iconColor": "violet"
   },
   {
    "name": "Work Calendar Bot",
    "section": "Work",
    "color": "violet",
    "lead": false,
-   "role": "Work calendar"
+   "role": "Work calendar",
+   "iconShape": "square",
+   "iconColor": "violet"
   },
   {
    "name": "PTO Bot",
    "section": "Work",
    "color": "violet",
    "lead": false,
-   "role": "Time-off tracking"
+   "role": "Time-off tracking",
+   "iconShape": "blob",
+   "iconColor": "violet"
   },
   {
    "name": "Job Bot",
    "section": "Jobs",
    "color": "cyan",
    "lead": true,
-   "role": "Job search front desk"
+   "role": "Job search front desk",
+   "iconShape": "wedge",
+   "iconColor": "cyan"
   },
   {
    "name": "Search Bot",
    "section": "Jobs",
    "color": "cyan",
    "lead": false,
-   "role": "Finds job leads"
+   "role": "Finds job leads",
+   "iconShape": "blob",
+   "iconColor": "cyan"
   },
   {
    "name": "Resume Bot",
    "section": "Jobs",
    "color": "cyan",
    "lead": false,
-   "role": "Tailors resumes"
+   "role": "Tailors resumes",
+   "iconShape": "square",
+   "iconColor": "cyan"
   },
   {
    "name": "Application Bot",
    "section": "Jobs",
    "color": "cyan",
    "lead": false,
-   "role": "Preps applications"
+   "role": "Preps applications",
+   "iconShape": "square",
+   "iconColor": "cyan"
   },
   {
    "name": "Tracker Bot",
    "section": "Jobs",
    "color": "cyan",
    "lead": false,
-   "role": "Application dashboards"
+   "role": "Application dashboards",
+   "iconShape": "tablet",
+   "iconColor": "cyan"
   },
   {
    "name": "Interview Bot",
    "section": "Jobs",
    "color": "cyan",
    "lead": false,
-   "role": "Mock interviews"
+   "role": "Mock interviews",
+   "iconShape": "default",
+   "iconColor": "cyan"
   }
  ],
  "handoffs": [

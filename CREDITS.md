@@ -4,17 +4,7 @@ Every 3D model in this project is free to redistribute in a public repository. N
 
 ## Characters
 
-Quaternius Ultimate Modular Men and Ultimate Modular Women. CC0 1.0 Universal.
-
-- Men: https://quaternius.com/packs/ultimatemodularcharacters.html
-- Women: https://quaternius.com/packs/ultimatemodularwomen.html
-- License: https://creativecommons.org/publicdomain/zero/1.0/
-
-The office uses these clothed rigs: male Suit, Casual Hoodie, Casual 2, Worker, Farmer, and Punk; female Suit, Formal, Casual, Worker, and Punk. Each file includes the pack's shared clips. This scene keeps Idle, Idle Neutral, Walk, Wave, and Interact, and drops the rest so the download stays smaller. Weapon meshes that shipped on some of those rigs are hidden.
-
-The GLB files are trimmed exports of those CC0 models. A public CC0 redistribution of the same meshes is also at https://github.com/LuanDucate/Ducz.CharacterCreator (see `public/models/LICENSE-Quaternius.txt` in that repo).
-
-The newer Universal Animation Library uses a different skeleton, so its clips are not retargeted onto these characters. Sleep and the paused Scout routine play Idle at the desk with a Zzz marker. Working plays Interact.
+The bots are original three.js extrusions of the `iconShape` marks in `data/bots.json`. No downloaded character model is used. Hover, walk, work, and sleep are procedural.
 
 ## Furniture
 

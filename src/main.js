@@ -10,7 +10,7 @@ import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { buildPlan } from './layout.js';
 import { buildOffice, loadFurniture } from './office.js';
-import { loadCharacters } from './actors.js';
+import { attachCamera, loadCharacters } from './actors.js';
 import { createSim } from './sim.js';
 import { createUI } from './ui.js';
 import { roomFor } from './layout.js';
@@ -26,7 +26,7 @@ const mobile = window.matchMedia('(pointer: coarse)').matches || window.innerWid
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.05;
+renderer.toneMappingExposure = 0.92;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.25 : 1.6));
@@ -34,6 +34,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.25 : 1.
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 220);
 camera.position.set(38, 46, 40);
+attachCamera(camera);
 
 const controls = new OrbitControls(camera, canvas);
 controls.target.set(0, 0.6, 0);
@@ -71,7 +72,7 @@ function resize() {
 function setupComposer() {
   composer = new EffectComposer(renderer);
   composer.addPass(new RenderPass(scene, camera));
-  bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), mobile ? 0.08 : 0.16, 0.4, 0.88);
+  bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), mobile ? 0.2 : 0.32, 0.45, 0.72);
   composer.addPass(bloom);
   if (!mobile) {
     const ratio = renderer.getPixelRatio();

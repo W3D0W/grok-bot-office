@@ -73,6 +73,12 @@ test('every bot has a desk and a route across the office', () => {
   const plan = buildPlan();
   const names = data.bots.map((bot) => bot.name);
   assert.deepEqual(Object.keys(plan.homes).sort(), [...names].sort());
+  const shapes = new Set(['hex', 'square', 'tablet', 'wedge', 'blob', 'default']);
+  const colors = new Set(['red', 'black', 'yellow', 'green', 'blue', 'violet', 'cyan']);
+  for (const bot of data.bots) {
+    assert.ok(shapes.has(bot.iconShape), bot.name);
+    assert.ok(colors.has(bot.iconColor), bot.name);
+  }
   for (const bot of data.bots) {
     const home = plan.homes[bot.name];
     assert.equal(home.section, bot.section);

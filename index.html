@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Grok Bot Office, a live 3D floor of the bot team." />
+    <meta name="theme-color" content="#141210" />
+    <title>Grok Bot Office</title>
+    <link rel="icon" href="%BASE_URL%favicon.svg" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="view"></canvas>
+      <div id="labels"></div>
+      <div id="hud">
+        <header id="top">
+          <div class="brand">
+            <p class="eyebrow">Mountain Time</p>
+            <h1>Grok Bot Office</h1>
+          </div>
+          <div class="clock-block">
+            <time id="clock">—</time>
+            <span id="phase"></span>
+          </div>
+          <div class="top-actions">
+            <button id="demo" type="button" aria-pressed="true">Demo day</button>
+          </div>
+        </header>
+        <section id="left" class="panel">
+          <div class="panel-head">
+            <h2>Sections</h2>
+            <p id="hint">Drag to orbit. Scroll or pinch to zoom. Click a bot.</p>
+          </div>
+          <div id="legend"></div>
+          <label class="speed">
+            <span>Speed <strong id="speed-readout">90×</strong></span>
+            <input id="speed" type="range" min="1" max="360" value="90" />
+          </label>
+        </section>
+        <aside id="feed" class="panel">
+          <div class="panel-head"><h2>Activity</h2></div>
+          <ol id="feed-list"></ol>
+        </aside>
+        <article id="detail" class="panel" hidden></article>
+      </div>
+      <div id="loading">
+        <div class="loader-card">
+          <p class="eyebrow">Opening the floor</p>
+          <h2>Grok Bot Office</h2>
+          <div class="bar"><span id="load-bar"></span></div>
+          <p id="load-note">Loading characters and furniture…</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

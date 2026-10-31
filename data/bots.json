@@ -1,0 +1,337 @@
+{
+ "generatedAt": "2026-10-31T15:55:00-06:00",
+ "timezone": "America/Denver",
+ "quietHours": {
+  "start": "21:00",
+  "end": "05:00"
+ },
+ "bots": [
+  {
+   "name": "Manager Bot",
+   "section": "Manager",
+   "color": "red",
+   "lead": true,
+   "role": "Designs and manages all the bots"
+  },
+  {
+   "name": "Life Bot",
+   "section": "Personal",
+   "color": "silver",
+   "lead": true,
+   "role": "Family, holidays, personal reminders"
+  },
+  {
+   "name": "Calendar Bot",
+   "section": "Personal",
+   "color": "silver",
+   "lead": false,
+   "role": "Shared calendar scheduler"
+  },
+  {
+   "name": "Email Bot",
+   "section": "Personal",
+   "color": "silver",
+   "lead": false,
+   "role": "Personal email sorting and drafts"
+  },
+  {
+   "name": "Nutrition Bot",
+   "section": "Food",
+   "color": "amber",
+   "lead": true,
+   "role": "Weekly dinner plans and coaching"
+  },
+  {
+   "name": "Grocery Bot",
+   "section": "Food",
+   "color": "amber",
+   "lead": false,
+   "role": "Turns meals into a shopping checklist"
+  },
+  {
+   "name": "Finance Bot",
+   "section": "Finance",
+   "color": "green",
+   "lead": true,
+   "role": "Money questions, runs the review loop"
+  },
+  {
+   "name": "Draft Bot",
+   "section": "Finance",
+   "color": "green",
+   "lead": false,
+   "role": "Builds charts and reports"
+  },
+  {
+   "name": "Review Bot",
+   "section": "Finance",
+   "color": "green",
+   "lead": false,
+   "role": "Checks Draft Bot's math"
+  },
+  {
+   "name": "Strategy Bot",
+   "section": "Finance",
+   "color": "green",
+   "lead": false,
+   "role": "Writes trade plans on request"
+  },
+  {
+   "name": "Scout Bot",
+   "section": "Finance",
+   "color": "green",
+   "lead": false,
+   "role": "Premarket stock scan"
+  },
+  {
+   "name": "Social Bot",
+   "section": "Social Media",
+   "color": "blue",
+   "lead": true,
+   "role": "Theater posts and inbox"
+  },
+  {
+   "name": "Video Bot",
+   "section": "Social Media",
+   "color": "blue",
+   "lead": false,
+   "role": "Edits theater video"
+  },
+  {
+   "name": "Insights Bot",
+   "section": "Social Media",
+   "color": "blue",
+   "lead": false,
+   "role": "Weekly social stats"
+  },
+  {
+   "name": "Price Bot",
+   "section": "Social Media",
+   "color": "blue",
+   "lead": false,
+   "role": "Wishlist price watcher"
+  },
+  {
+   "name": "Ratings Bot",
+   "section": "Social Media",
+   "color": "blue",
+   "lead": false,
+   "role": "Weekly Letterboxd top 5"
+  },
+  {
+   "name": "Work Bot",
+   "section": "Work",
+   "color": "violet",
+   "lead": true,
+   "role": "Work planner and EA"
+  },
+  {
+   "name": "Work Email Bot",
+   "section": "Work",
+   "color": "violet",
+   "lead": false,
+   "role": "Work email sorting"
+  },
+  {
+   "name": "Work Calendar Bot",
+   "section": "Work",
+   "color": "violet",
+   "lead": false,
+   "role": "Work calendar"
+  },
+  {
+   "name": "PTO Bot",
+   "section": "Work",
+   "color": "violet",
+   "lead": false,
+   "role": "Time-off tracking"
+  },
+  {
+   "name": "Job Bot",
+   "section": "Jobs",
+   "color": "cyan",
+   "lead": true,
+   "role": "Job search front desk"
+  },
+  {
+   "name": "Search Bot",
+   "section": "Jobs",
+   "color": "cyan",
+   "lead": false,
+   "role": "Finds job leads"
+  },
+  {
+   "name": "Resume Bot",
+   "section": "Jobs",
+   "color": "cyan",
+   "lead": false,
+   "role": "Tailors resumes"
+  },
+  {
+   "name": "Application Bot",
+   "section": "Jobs",
+   "color": "cyan",
+   "lead": false,
+   "role": "Preps applications"
+  },
+  {
+   "name": "Tracker Bot",
+   "section": "Jobs",
+   "color": "cyan",
+   "lead": false,
+   "role": "Application dashboards"
+  },
+  {
+   "name": "Interview Bot",
+   "section": "Jobs",
+   "color": "cyan",
+   "lead": false,
+   "role": "Mock interviews"
+  }
+ ],
+ "handoffs": [
+  {
+   "from": "Video Bot",
+   "to": "Social Bot",
+   "label": "edited video"
+  },
+  {
+   "from": "Social Bot",
+   "to": "Calendar Bot",
+   "label": "scheduling"
+  },
+  {
+   "from": "Life Bot",
+   "to": "Calendar Bot",
+   "label": "scheduling"
+  },
+  {
+   "from": "Calendar Bot",
+   "to": "Nutrition Bot",
+   "label": "office days"
+  },
+  {
+   "from": "Nutrition Bot",
+   "to": "Calendar Bot",
+   "label": "meal times"
+  },
+  {
+   "from": "Nutrition Bot",
+   "to": "Grocery Bot",
+   "label": "chosen meals"
+  },
+  {
+   "from": "Finance Bot",
+   "to": "Draft Bot",
+   "label": "request"
+  },
+  {
+   "from": "Draft Bot",
+   "to": "Review Bot",
+   "label": "draft"
+  },
+  {
+   "from": "Strategy Bot",
+   "to": "Review Bot",
+   "label": "trade plan"
+  },
+  {
+   "from": "Review Bot",
+   "to": "Finance Bot",
+   "label": "review notes"
+  },
+  {
+   "from": "Work Email Bot",
+   "to": "Work Bot",
+   "label": "tasks"
+  },
+  {
+   "from": "Work Email Bot",
+   "to": "Work Calendar Bot",
+   "label": "meeting requests"
+  },
+  {
+   "from": "PTO Bot",
+   "to": "Work Calendar Bot",
+   "label": "time-off dates"
+  },
+  {
+   "from": "Search Bot",
+   "to": "Resume Bot",
+   "label": "approved leads"
+  },
+  {
+   "from": "Resume Bot",
+   "to": "Application Bot",
+   "label": "approved docs"
+  },
+  {
+   "from": "Application Bot",
+   "to": "Tracker Bot",
+   "label": "tracker"
+  },
+  {
+   "from": "Job Bot",
+   "to": "Search Bot",
+   "label": "kickoff"
+  },
+  {
+   "from": "Job Bot",
+   "to": "Resume Bot",
+   "label": "kickoff"
+  },
+  {
+   "from": "Job Bot",
+   "to": "Tracker Bot",
+   "label": "kickoff"
+  },
+  {
+   "from": "Job Bot",
+   "to": "Interview Bot",
+   "label": "interview details"
+  }
+ ],
+ "routines": [
+  {
+   "bot": "Manager Bot",
+   "name": "Friction scan",
+   "schedule": "Mon 8:44 AM"
+  },
+  {
+   "bot": "Manager Bot",
+   "name": "Routine audit",
+   "schedule": "Mon 8:49 AM"
+  },
+  {
+   "bot": "Scout Bot",
+   "name": "Premarket scan",
+   "schedule": "Weekdays 6:30 AM",
+   "paused": true
+  },
+  {
+   "bot": "Price Bot",
+   "name": "Wishlist check",
+   "schedule": "Mon and Fri"
+  },
+  {
+   "bot": "Nutrition Bot",
+   "name": "Weekly plan",
+   "schedule": "Wed 3:30 PM"
+  },
+  {
+   "bot": "Insights Bot",
+   "name": "Weekly stats",
+   "schedule": "Weekly"
+  },
+  {
+   "bot": "Ratings Bot",
+   "name": "Letterboxd top 5",
+   "schedule": "Weekly"
+  },
+  {
+   "bot": "PTO Bot",
+   "name": "Monthly check",
+   "schedule": "Monthly, 1st"
+  }
+ ]
+}

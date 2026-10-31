@@ -1,0 +1,23 @@
+{
+  "events": [
+    {
+      "type": "handoff",
+      "from": "Job Bot",
+      "to": "Interview Bot",
+      "label": "interview details",
+      "at": "10:15"
+    },
+    {
+      "type": "task",
+      "from": "Draft Bot",
+      "label": "refresh the weekly charts",
+      "at": "13:05"
+    },
+    {
+      "type": "routine",
+      "from": "Ratings Bot",
+      "label": "Letterboxd top 5",
+      "at": "Mon 11:30"
+    }
+  ]
+}
